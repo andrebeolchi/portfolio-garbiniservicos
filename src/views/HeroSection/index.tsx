@@ -61,13 +61,13 @@ export default function HeroSection() {
 						<p className="mt-6 text-lg leading-8 text-gray-600">{details?.subtitle}</p>
 						<div className="mt-10 flex items-center justify-center gap-x-6">
 							<span
-								className="cursor-pointer rounded-md bg-light-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-light-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light-green-500 transition ease-in-out"
+								className="cursor-pointer rounded-md bg-zinc-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500 transition ease-in-out"
 								onClick={() => window.open(footer?.social?.whatsapp ?? "#", "_blank")}>
 								Contato
 							</span>
 							<Link
 								to={"projects"}
-								className="transition-colors text-sm font-semibold leading-6 text-gray-900 hover:text-light-green-500 cursor-pointer"
+								className="transition-colors text-sm font-semibold leading-6 text-gray-900 hover:text-zinc-500 cursor-pointer"
 								smooth={true}
 								duration={500}
 								spy={true}>

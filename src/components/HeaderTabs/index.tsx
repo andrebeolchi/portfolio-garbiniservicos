@@ -53,7 +53,7 @@ export default function HeaderTabs({ tabs }: { tabs: FlyoutMenuProps[] }) {
 				<div className="hidden lg:flex lg:flex-1 lg:justify-end">
 					{data?.curriculum && (
 						<span
-							className="transition-colors text-sm font-semibold leading-6 text-gray-900 hover:text-light-green-600 cursor-pointer"
+							className="transition-colors text-sm font-semibold leading-6 text-gray-900 hover:text-zinc-600 cursor-pointer"
 							onClick={() => window.open(data?.curriculum, "_blank")}>
 							Currículo <span aria-hidden="true">&darr;</span>
 						</span>
@@ -99,7 +99,7 @@ export default function HeaderTabs({ tabs }: { tabs: FlyoutMenuProps[] }) {
 										<Link
 											key={item.name}
 											to={item.to ?? ""}
-											className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-200 hover:text-light-green-600 cursor-pointer transition-colors " 
+											className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-200 hover:text-zinc-600 cursor-pointer transition-colors " 
 											onClick={() => setMobileMenuOpen(false)}>
 											{item.name}
 										</Link>
@@ -110,7 +110,7 @@ export default function HeaderTabs({ tabs }: { tabs: FlyoutMenuProps[] }) {
 												window.open(item.href, "_blank");
 												setMobileMenuOpen(false);
 											}}
-											className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-200 hover:text-light-green-600 cursor-pointer transition-colors ">
+											className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-200 hover:text-zinc-600 cursor-pointer transition-colors ">
 											{item.name}
 										</span>
 									)

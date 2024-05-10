@@ -16,7 +16,7 @@ export default function FlyoutMenu({ menu }: { menu: FlyoutMenuProps }) {
 				{to ? (
 					<Link
 						to={to}
-						className="transition-colors group-hover:text-light-green-600"
+						className="transition-colors group-hover:text-zinc-600"
 						smooth={true}
 						duration={500}
 						spy={true}>
@@ -30,13 +30,13 @@ export default function FlyoutMenu({ menu }: { menu: FlyoutMenuProps }) {
 								window.open(href, "_blank");
 							}
 						}}
-						className="transition-colors group-hover:text-light-green-600">
+						className="transition-colors group-hover:text-zinc-600">
 						{name}
 					</span>
 				)}
 				{isExpandable && (
 					<ChevronDownIcon
-						className="h-5 w-5 transition-colors group-hover:text-light-green-600"
+						className="h-5 w-5 transition-colors group-hover:text-zinc-600"
 						aria-hidden="true"
 					/>
 				)}
@@ -58,7 +58,7 @@ export default function FlyoutMenu({ menu }: { menu: FlyoutMenuProps }) {
 									<div className="flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
 										<div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-gray-50">
 											<InformationCircleIcon
-												className="h-6 w-6 text-gray-600 group-hover:text-light-green-500"
+												className="h-6 w-6 text-gray-600 group-hover:text-zinc-500"
 												aria-hidden="true"
 											/>
 										</div>
@@ -81,7 +81,7 @@ export default function FlyoutMenu({ menu }: { menu: FlyoutMenuProps }) {
 										<div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
 											{item.icon ? (
 												<item.icon
-													className="h-8 w-8 text-gray-600 group-hover:text-light-green-500"
+													className="h-8 w-8 text-gray-600 group-hover:text-zinc-500"
 													aria-hidden="true"
 												/>
 											) : (

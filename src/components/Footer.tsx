@@ -41,7 +41,7 @@ export default function Footer() {
 											<span
 												onClick={() => href.length > 3 && window.open(href, "_blank")}
 												className={`py-1.5 font-normal ${
-													href.length > 3 && "transition-colors hover:text-light-green-600 cursor-pointer"
+													href.length > 3 && "transition-colors hover:text-zinc-600 cursor-pointer"
 												}`}>
 												{title}
 											</span>
@@ -60,7 +60,7 @@ export default function Footer() {
 						{/* Facebook */}
 						{/* <a
 							href="#"
-							className="opacity-80 hover:opacity-100 hover:text-light-green-600 transition ease-in-out">
+							className="opacity-80 hover:opacity-100 hover:text-zinc-600 transition ease-in-out">
 							<svg
 								className="h-6 w-6"
 								fill="currentColor"
@@ -78,7 +78,7 @@ export default function Footer() {
 						{Boolean(footer?.social?.instagram) && (
 							<a
 								href={footer?.social?.instagram}
-								className="opacity-80 hover:opacity-100 hover:text-light-green-600 transition ease-in-out">
+								className="opacity-80 hover:opacity-100 hover:text-zinc-600 transition ease-in-out">
 								<svg
 									className="h-6 w-6"
 									fill="currentColor"
@@ -93,7 +93,7 @@ export default function Footer() {
 						{Boolean(footer?.social?.whatsapp) && (
 							<a
 								href={footer?.social?.whatsapp}
-								className="opacity-80 hover:opacity-100 hover:text-light-green-600 transition ease-in-out">
+								className="opacity-80 hover:opacity-100 hover:text-zinc-600 transition ease-in-out">
 								<svg
 									className="h-6 w-6"
 									fill="currentColor"
@@ -107,7 +107,7 @@ export default function Footer() {
 						{/* Twitter */}
 						{/* <a
 							href="#"
-							className="opacity-80 hover:opacity-100 hover:text-light-green-600 transition ease-in-out">
+							className="opacity-80 hover:opacity-100 hover:text-zinc-600 transition ease-in-out">
 							<svg
 								className="h-6 w-6"
 								fill="currentColor"
@@ -120,7 +120,7 @@ export default function Footer() {
 						{/* Github */}
 						{/* <a
 							href="#"
-							className="opacity-80 hover:opacity-100 hover:text-light-green-600 transition ease-in-out">
+							className="opacity-80 hover:opacity-100 hover:text-zinc-600 transition ease-in-out">
 							<svg
 								className="h-6 w-6"
 								fill="currentColor"
