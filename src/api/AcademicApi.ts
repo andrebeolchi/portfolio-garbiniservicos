@@ -57,7 +57,7 @@ class AcademicApi {
 			};
 
 			await updateDoc(detailsRef, body);
-		} catch (error) {
+		} catch (error) {			
 			if (error instanceof FirebaseError) {
 				throw new Error(error.message);
 			}

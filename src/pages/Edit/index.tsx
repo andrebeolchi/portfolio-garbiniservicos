@@ -7,9 +7,9 @@ export default function EditPage({ children }: { children: React.ReactNode }) {
 	const { data: academicData } = useAcademic();
 	const { data: projectsData } = useProjects();
 
-	if (!academicData || !projectsData) {
-		return null;
-	}
+	// if (!academicData || !projectsData) {
+	// 	return null;
+	// }
 
 	return (
 		<div>
@@ -20,8 +20,8 @@ export default function EditPage({ children }: { children: React.ReactNode }) {
 						href: "/edit"
 					},
 					{
-						name: academicData.title,
-						submenus: academicData.items?.map((item) => ({
+						name: academicData?.title ?? "Formação",
+						submenus: academicData?.items?.map((item) => ({
 							name: item.title,
 							description: item.category,
 							image: item.image,
@@ -45,8 +45,8 @@ export default function EditPage({ children }: { children: React.ReactNode }) {
 						]
 					},
 					{
-						name: projectsData.title,
-						submenus: projectsData.items?.map((item) => ({
+						name: projectsData?.title ?? "Projetos",
+						submenus: projectsData?.items?.map((item) => ({
 							name: item.title,
 							description: item.subtitle,
 							image: item.images[0]?.url,
