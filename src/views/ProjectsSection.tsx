@@ -64,91 +64,92 @@ export default function ProjectsSection() {
 								</div>
 							</div>
 							<div className="flex w-full sm:w-[32rem] rounded-xl md:-ml-4 lg:-ml-0 place-self-center bg-gray-50 p-4 border-gray-900/10 border shadow-sm">
-								<Carousel
-									autoplay={true}
-									loop={true}
-									autoplayDelay={2500}
-									className="rounded-xl"
-									placeholder={item?.title}
-									prevArrow={({ handlePrev }) =>
-										item.images.length > 1 && (
-											<IconButton
-												variant="text"
-												color="gray"
-												placeholder={"previous"}
-												size="lg"
-												onClick={handlePrev}
-												className="!absolute top-2/4 left-4 -translate-y-2/4">
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													fill="none"
-													viewBox="0 0 24 24"
-													strokeWidth={2}
-													stroke="currentColor"
-													className="h-6 w-6">
-													<path
-														strokeLinecap="round"
-														strokeLinejoin="round"
-														d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-													/>
-												</svg>
-											</IconButton>
-										)
-									}
-									nextArrow={({ handleNext }) =>
-										item.images.length > 1 && (
-											<IconButton
-												placeholder={""}
-												variant="text"
-												color="gray"
-												size="lg"
-												onClick={handleNext}
-												className="!absolute top-2/4 !right-4 -translate-y-2/4">
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													fill="none"
-													viewBox="0 0 24 24"
-													strokeWidth={2}
-													stroke="currentColor"
-													className="h-6 w-6">
-													<path
-														strokeLinecap="round"
-														strokeLinejoin="round"
-														d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-													/>
-												</svg>
-											</IconButton>
-										)
-									}
-									navigation={({ setActiveIndex, activeIndex, length }) =>
-										item.images.length > 1 && (
-											<div className="absolute bottom-2 left-2/4 z-50 flex -translate-x-2/4 gap-2">
-												{new Array(length).fill("").map((_, i) => (
-													<span
-														key={i}
-														className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
-															activeIndex === i ? "w-8 bg-gray-600" : "w-4 bg-gray-400/90"
-														}`}
-														onClick={() => setActiveIndex(i)}
-													/>
-												))}
-											</div>
-										)
-									}>
-									{item?.images
-										?.sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
-										?.map((image) => (
-											<img
-												key={image?.id}
-												src={image?.url}
-												alt={image?.title}
-												className="w-full sm:w-[32rem] h-[20rem] object-contain"
-												width={2432}
-												height={1442}
-												onClick={() => setSelectedImage(image)}
-											/>
-										))}
-								</Carousel>
+								{item.images && item.images?.length > 1 && (
+									<Carousel
+										autoplay={true}
+										loop={true}
+										autoplayDelay={2500}
+										className="rounded-xl"
+										placeholder={item?.title}
+										prevArrow={({ handlePrev }) =>
+											item.images?.length > 1 && (
+												<IconButton
+													variant="text"
+													color="gray"
+													placeholder={"previous"}
+													size="lg"
+													onClick={handlePrev}
+													className="!absolute top-2/4 left-4 -translate-y-2/4">
+													<svg
+														xmlns="http://www.w3.org/2000/svg"
+														fill="none"
+														viewBox="0 0 24 24"
+														strokeWidth={2}
+														stroke="currentColor"
+														className="h-6 w-6">
+														<path
+															strokeLinecap="round"
+															strokeLinejoin="round"
+															d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+														/>
+													</svg>
+												</IconButton>
+											)
+										}
+										nextArrow={({ handleNext }) =>
+											item.images?.length > 1 && (
+												<IconButton
+													placeholder={""}
+													variant="text"
+													color="gray"
+													size="lg"
+													onClick={handleNext}
+													className="!absolute top-2/4 !right-4 -translate-y-2/4">
+													<svg
+														xmlns="http://www.w3.org/2000/svg"
+														fill="none"
+														viewBox="0 0 24 24"
+														strokeWidth={2}
+														stroke="currentColor"
+														className="h-6 w-6">
+														<path
+															strokeLinecap="round"
+															strokeLinejoin="round"
+															d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+														/>
+													</svg>
+												</IconButton>
+											)
+										}
+										navigation={({ setActiveIndex, activeIndex, length }) =>
+											item.images.length > 1 && (
+												<div className="absolute bottom-2 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+													{new Array(length).fill("").map((_, i) => (
+														<span
+															key={i}
+															className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${activeIndex === i ? "w-8 bg-gray-600" : "w-4 bg-gray-400/90"
+																}`}
+															onClick={() => setActiveIndex(i)}
+														/>
+													))}
+												</div>
+											)
+										}>
+										{item?.images
+											?.sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+											?.map((image) => (
+												<img
+													key={image?.id}
+													src={image?.url}
+													alt={image?.title}
+													className="w-full sm:w-[32rem] h-[20rem] object-contain"
+													width={2432}
+													height={1442}
+													onClick={() => setSelectedImage(image)}
+												/>
+											))}
+									</Carousel>
+								)}
 							</div>
 						</div>
 					);
@@ -172,11 +173,4 @@ export default function ProjectsSection() {
 			</Dialog>
 		</div>
 	);
-}
-{
-	/* <img
-src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
-alt="Product screenshot"
-className="w-[48rem] rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0 place-self-center"
-/> */
 }
