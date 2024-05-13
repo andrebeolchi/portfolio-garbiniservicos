@@ -1,5 +1,6 @@
 import { useFooter } from "../context/Footer/FooterContext.hooks";
 import { useHero } from "../context/Hero/HeroContext.hooks";
+import logoHorizontal from "../assets/logohorizontal.svg";
 
 export default function Footer() {
 	const { data: hero } = useHero();
@@ -17,13 +18,10 @@ export default function Footer() {
 						href="/"
 						className="flex items-center">
 						<img
-							src={hero?.image}
-							className="h-8 me-3"
+							src={logoHorizontal}
+							className="h-14 me-3"
 							alt={hero?.title}
 						/>
-						<span className="self-center text-wrap text-2xl font-semibold whitespace-nowrap dark:text-white">
-							{hero?.title}
-						</span>
 					</a>
 					<div className="grid grid-cols-2 sm:grid-cols-3 justify-between gap-8">
 						{footer?.list?.map(({ title, items }) => (
@@ -40,9 +38,8 @@ export default function Footer() {
 											className="mt-1.5">
 											<span
 												onClick={() => href.length > 3 && window.open(href, "_blank")}
-												className={`py-1.5 font-normal ${
-													href.length > 3 && "transition-colors hover:text-gray-600 cursor-pointer"
-												}`}>
+												className={`py-1.5 font-normal ${href.length > 3 && "transition-colors hover:text-gray-600 cursor-pointer"
+													}`}>
 												{title}
 											</span>
 										</li>
