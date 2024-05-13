@@ -20,7 +20,7 @@ export default function EditPage({ children }: { children: React.ReactNode }) {
 						href: "/edit"
 					},
 					{
-						name: academicData?.title ?? "Formação",
+						name: academicData?.title ?? "Áreas",
 						submenus: academicData?.items?.map((item) => ({
 							name: item.title,
 							description: item.category,
@@ -28,7 +28,7 @@ export default function EditPage({ children }: { children: React.ReactNode }) {
 							href: `/edit/academic/${item?.id}`
 						})),
 						emptyState: {
-							title: "Nenhuma formação adicionada",
+							title: "Nenhuma Área adicionada",
 							description: "Adicione alguma para que seja exibido em sua página."
 						},
 						callsToAction: [
@@ -38,7 +38,7 @@ export default function EditPage({ children }: { children: React.ReactNode }) {
 								icon: PencilIcon
 							},
 							{
-								name: "Adicionar Curso",
+								name: "Adicionar Área",
 								href: "/edit/academic/new",
 								icon: AcademicCapIcon
 							}

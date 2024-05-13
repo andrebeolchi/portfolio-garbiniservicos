@@ -132,7 +132,6 @@ export default function EditHero() {
 													? URL.createObjectURL(inputedCurriculum ?? new File([], ""))
 													: details?.curriculum
 											}
-											target="_blank"
 											rel="noopener noreferrer"
 											className="rounded-md bg-gray-50 px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
 											<MagnifyingGlassPlusIcon className="h-5 w-5" />

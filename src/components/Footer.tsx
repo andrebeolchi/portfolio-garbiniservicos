@@ -78,6 +78,8 @@ export default function Footer() {
 						{Boolean(footer?.social?.instagram) && (
 							<a
 								href={footer?.social?.instagram}
+								target="_blank"
+								rel="noopener noreferrer"
 								className="opacity-80 hover:opacity-100 hover:text-gray-600 transition ease-in-out">
 								<svg
 									className="h-6 w-6"
@@ -93,6 +95,8 @@ export default function Footer() {
 						{Boolean(footer?.social?.whatsapp) && (
 							<a
 								href={footer?.social?.whatsapp}
+								target="_blank"
+								rel="noopener noreferrer"
 								className="opacity-80 hover:opacity-100 hover:text-gray-600 transition ease-in-out">
 								<svg
 									className="h-6 w-6"
