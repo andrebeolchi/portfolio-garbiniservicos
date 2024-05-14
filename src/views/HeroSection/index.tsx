@@ -15,7 +15,7 @@ export default function HeroSection() {
 
 	if (academic && academic?.items.length > 0) {
 		tabs.push({
-			name: "Formação",
+			name: "Áreas",
 			to: "academic"
 		});
 	}
