@@ -26,7 +26,7 @@ export default function AcademicSection() {
 									<img
 										src={post.image}
 										alt=""
-										className="h-48 w-full rounded-lg object-contain"
+										className="h-48 w-full rounded-lg object-cover object-center"
 									/>
 								</div>
 							)}

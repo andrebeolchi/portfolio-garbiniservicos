@@ -138,7 +138,7 @@ export default function EditAcademicItems() {
 								<div className="mt-2 flex items-center gap-x-3">
 									{(academic?.inputedImage || academic?.image) && (
 										<img
-											className="h-10 w-auto"
+											className="h-10 w-auto object-cover object-center"
 											src={academic?.inputedImage ? URL.createObjectURL(academic?.inputedImage) : academic?.image}
 										/>
 									)}

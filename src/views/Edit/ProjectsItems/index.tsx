@@ -236,7 +236,7 @@ export default function EditProjectsItems() {
 											<h3 className="text-xl font-medium leading-6 text-gray-900 mr-4">{(item.order ?? 0) + 1}</h3>
 										</div>
 										<img
-											className="h-10 w-10 object-contain "
+											className="h-10 w-10 object-cover object-center"
 											src={item?.name ? URL.createObjectURL(item) : item?.url}
 										/>
 										<div className="w-full">

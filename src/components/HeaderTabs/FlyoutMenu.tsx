@@ -87,7 +87,7 @@ export default function FlyoutMenu({ menu }: { menu: FlyoutMenuProps }) {
 											) : (
 												item.image && (
 													<img
-														className="h-8 w-8 flex-none text-gray-400 object-contain"
+														className="h-8 w-8 flex-none text-gray-400 object-cover object-center"
 														src={item.image}
 														aria-hidden="true"
 													/>

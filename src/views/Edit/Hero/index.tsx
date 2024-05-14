@@ -99,7 +99,7 @@ export default function EditHero() {
 								</label>
 								<div className="mt-2 flex items-center gap-x-2.5">
 									<img
-										className="h-10 w-10"
+										className="h-10 w-10 object-cover object-center"
 										src={inputedImage ? URL.createObjectURL(inputedImage) : image}
 									/>
 									<label

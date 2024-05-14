@@ -191,7 +191,7 @@ export default function ProjectsSection() {
 													key={image?.id}
 													src={image?.url}
 													alt={image?.title}
-													className="w-full sm:w-[32rem] h-[20rem] object-contain"
+													className="w-full sm:w-[32rem] h-[20rem] object-cover object-center"
 													width={2432}
 													height={1442}
 													onClick={() => setSelectedImage(image)}
