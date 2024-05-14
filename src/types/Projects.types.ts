@@ -12,6 +12,9 @@ export interface ProjectsItemProps {
 	description: string;
 	bullets: BulletProps[];
 
+	implementationTime?: string;
+	responsibilities?: string;
+
 	inputedImages?: InputImage[];
 	images: ImagesProps[];
 	order: number;

@@ -2,6 +2,7 @@ import { Carousel, Dialog, DialogBody, IconButton } from "@material-tailwind/rea
 import { useState } from "react";
 import { useProjects } from "../context/Projects/ProjectsContext.hooks";
 import { ImagesProps } from "../types/Projects.types";
+import { ChatBubbleBottomCenterTextIcon, CheckBadgeIcon, ClockIcon } from "@heroicons/react/20/solid";
 
 export default function ProjectsSection() {
 	const { data: projectsData } = useProjects();
@@ -44,7 +45,46 @@ export default function ProjectsSection() {
 										{item?.subtitle}
 									</h2>
 									<p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{item?.title}</p>
-									<p className="mt-6 text-lg leading-8 text-gray-600">{item?.description}</p>
+
+									{!!item?.description && (
+										<div
+											className="flex items-center gap-x-4 text-gray-600 mt-6"
+										>
+											<div>
+												<ChatBubbleBottomCenterTextIcon
+													className="h-6 w-6 leading-8"
+												/>
+											</div>
+											<p className="text-lg leading-8">{item?.description}</p>
+										</div>
+									)}
+
+									{!!item?.implementationTime && (
+										<div
+											className="flex items-center gap-x-4 text-gray-600 mt-6"
+										>
+											<div>
+												<ClockIcon
+													className="h-6 w-6 leading-8"
+												/>
+											</div>
+											<p className="text-lg leading-8">{item?.implementationTime}</p>
+										</div>
+									)}
+
+									{!!item?.responsibilities && (
+										<div
+											className="flex items-center gap-x-4 text-gray-600 mt-6"
+										>
+											<div>
+												<CheckBadgeIcon
+													className="h-6 w-6 leading-8"
+												/>
+											</div>
+											<p className="text-lg leading-8">{item?.responsibilities}</p>
+										</div>
+									)}
+
 									<dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
 										{item?.bullets?.map((bullet, index) => (
 											<div

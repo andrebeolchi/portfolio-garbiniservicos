@@ -98,6 +98,8 @@ class ProjectsApi {
 				subtitle: item.subtitle,
 				images,
 				description: item.description,
+				responsibilities: item.responsibilities,
+				implementationTime: item.implementationTime,
 				order: (snapshot.data().count ?? 0) + 1
 			};
 
@@ -148,7 +150,9 @@ class ProjectsApi {
 				title: item.title,
 				subtitle: item.subtitle,
 				images,
-				description: item.description
+				description: item.description,
+				responsibilities: item.responsibilities,
+				implementationTime: item.implementationTime
 			};
 
 			const detailsRef = doc(db, `data/projects/list/${item.id}`);

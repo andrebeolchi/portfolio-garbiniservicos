@@ -23,6 +23,8 @@ export default function EditProjectsItems() {
 		subtitle: "",
 		bullets: [],
 		description: "",
+		implementationTime: "",
+		responsibilities: "",
 		images: [],
 		order: 0
 	});
@@ -45,6 +47,10 @@ export default function EditProjectsItems() {
 			console.log("error ", error);
 		}
 	};
+
+// 	• Descrição: Construção de parede com drywall com vidros fixos
+// • Prazo: 15 dias
+// • Restrições: Execução apenas nos fins de semana
 
 	useEffect(() => {
 		if (id !== "new") {
@@ -102,7 +108,7 @@ export default function EditProjectsItems() {
 								<label
 									htmlFor="category"
 									className="block text-sm font-medium leading-6 text-gray-900">
-									Subtítulo*
+									Categoria
 								</label>
 								<div className="mt-2">
 									<div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-gray-600 sm:max-w-md">
@@ -112,7 +118,7 @@ export default function EditProjectsItems() {
 											id="category"
 											autoComplete="category"
 											className="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-											placeholder="Ex: Revit"
+											placeholder="Ex: Comercial"
 											value={projects?.subtitle}
 											required
 											onChange={(event) => setProjects({ ...projects, subtitle: event.target.value })}
@@ -125,7 +131,7 @@ export default function EditProjectsItems() {
 								<label
 									htmlFor="description"
 									className="block text-sm font-medium leading-6 text-gray-900">
-									Descrição*
+									Descrição
 								</label>
 								<div className="mt-2">
 									<textarea
@@ -136,6 +142,52 @@ export default function EditProjectsItems() {
 										onChange={(event) => setProjects({ ...projects, description: event.target.value })}
 										value={projects.description}
 									/>
+								</div>
+							</div>
+
+							<div className="sm:col-span-4">
+								<label
+									htmlFor="implementationTime"
+									className="block text-sm font-medium leading-6 text-gray-900">
+									Prazo de Implementação*
+								</label>
+								<div className="mt-2">
+									<div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-gray-600 sm:max-w-md">
+										<input
+											type="text"
+											name="implementationTime"
+											id="implementationTime"
+											autoComplete="implementationTime"
+											className="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+											placeholder="Ex: 15 dias"
+											value={projects?.implementationTime}
+											required
+											onChange={(event) => setProjects({ ...projects, implementationTime: event.target.value })}
+										/>
+									</div>
+								</div>
+							</div>
+
+							<div className="sm:col-span-4">
+								<label
+									htmlFor="responsibilities"
+									className="block text-sm font-medium leading-6 text-gray-900">
+									Requisitos do Projeto*
+								</label>
+								<div className="mt-2">
+									<div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-gray-600 sm:max-w-md">
+										<input
+											type="text"
+											name="responsibilities"
+											id="responsibilities"
+											autoComplete="responsibilities"
+											className="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+											placeholder="Ex: Execução apenas em horário comercial"
+											value={projects?.responsibilities}
+											required
+											onChange={(event) => setProjects({ ...projects, responsibilities: event.target.value })}
+										/>
+									</div>
 								</div>
 							</div>
 
