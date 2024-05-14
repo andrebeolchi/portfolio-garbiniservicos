@@ -55,7 +55,7 @@ export default function ProjectsSection() {
 												className="flex items-center gap-x-4 text-gray-600 mt-6"
 											>
 												<ChatBubbleBottomCenterTextIcon
-													className="h-6 w-6 leading-8"
+													className={`h-6 ${isEven ? "w-6" : "w-[48px]"} leading-8`}
 												/>
 												<p className="text-lg leading-8">{item?.description}</p>
 											</div>
