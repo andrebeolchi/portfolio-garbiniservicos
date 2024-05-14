@@ -91,7 +91,7 @@ export default function Footer() {
 						{/* WhatsApp */}
 						{Boolean(footer?.social?.whatsapp) && (
 							<a
-								href={footer?.social?.whatsapp}
+								href={`https://wa.me/55${footer?.social?.whatsapp}?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20projetos%20da%20${hero?.title}.%20Poderia%20me%20ajudar?`}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="opacity-80 hover:opacity-100 hover:text-gray-600 transition ease-in-out">
