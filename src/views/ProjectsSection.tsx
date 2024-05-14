@@ -1,4 +1,4 @@
-import { Carousel, Dialog, DialogBody, IconButton } from "@material-tailwind/react";
+import { Carousel, Dialog, DialogBody, IconButton, Tooltip } from "@material-tailwind/react";
 import { useState } from "react";
 import { useProjects } from "../context/Projects/ProjectsContext.hooks";
 import { ImagesProps } from "../types/Projects.types";
@@ -47,42 +47,51 @@ export default function ProjectsSection() {
 									<p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{item?.title}</p>
 
 									{!!item?.description && (
-										<div
-											className="flex items-center gap-x-4 text-gray-600 mt-6"
+										<Tooltip
+											content={"Descrição do projeto"}
+											placement="top-start"
 										>
-											<div>
+											<div
+												className="flex items-center gap-x-4 text-gray-600 mt-6"
+											>
 												<ChatBubbleBottomCenterTextIcon
 													className="h-6 w-6 leading-8"
 												/>
+												<p className="text-lg leading-8">{item?.description}</p>
 											</div>
-											<p className="text-lg leading-8">{item?.description}</p>
-										</div>
+										</Tooltip>
 									)}
 
 									{!!item?.implementationTime && (
-										<div
-											className="flex items-center gap-x-4 text-gray-600 mt-6"
+										<Tooltip
+											content={"Prazo de implementação"}
+											placement="top-start"
 										>
-											<div>
+											<div
+												className="flex items-center gap-x-4 text-gray-600 mt-6"
+											>
 												<ClockIcon
 													className="h-6 w-6 leading-8"
 												/>
+												<p className="text-lg leading-8">{item?.implementationTime}</p>
 											</div>
-											<p className="text-lg leading-8">{item?.implementationTime}</p>
-										</div>
+										</Tooltip>
 									)}
 
 									{!!item?.responsibilities && (
-										<div
-											className="flex items-center gap-x-4 text-gray-600 mt-6"
+										<Tooltip
+											content={"Requisitos do projeto"}
+											placement="top-start"
 										>
-											<div>
+											<div
+												className="flex items-center gap-x-4 text-gray-600 mt-6"
+											>
 												<CheckBadgeIcon
 													className="h-6 w-6 leading-8"
 												/>
+												<p className="text-lg leading-8">{item?.responsibilities}</p>
 											</div>
-											<p className="text-lg leading-8">{item?.responsibilities}</p>
-										</div>
+										</Tooltip>
 									)}
 
 									<dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
@@ -211,6 +220,6 @@ export default function ProjectsSection() {
 					/>
 				</DialogBody>
 			</Dialog>
-		</div>
+		</div >
 	);
 }
