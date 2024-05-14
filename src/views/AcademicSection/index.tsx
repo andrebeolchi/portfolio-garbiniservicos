@@ -31,10 +31,14 @@ export default function AcademicSection() {
 								</div>
 							)}
 							<div className="flex items-center gap-x-4 text-xs">
-								<p className="text-gray-500">{post.date}</p>
-								<p className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600">
-									{post.category}
-								</p>
+								{!!post.date && (
+									<p className="text-gray-500">{post.date}</p>
+								)}
+								{!!post.category && (
+									<p className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600">
+										{post.category}
+									</p>
+								)}
 							</div>
 							<div className="group relative">
 								<h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
@@ -43,7 +47,7 @@ export default function AcademicSection() {
 										{post.title}
 									</span>
 								</h3>
-								{post.subtitle && <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{post.subtitle}</p>}
+								{!!post.subtitle && <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{post.subtitle}</p>}
 							</div>
 						</article>
 					))}
